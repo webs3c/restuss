@@ -56,6 +56,7 @@ func (k *KeyAuthProvider) Prepare(_ string, _ *http.Client) error {
 func (k *KeyAuthProvider) AddAuthHeaders(r *http.Request) {
 	r.Header.Add(
 		"X-ApiKeys",
+		"X-API-Token",
 		fmt.Sprintf("accessKey=%s; secretKey=%s", k.accessKey, k.secretKey),
 	)
 }
